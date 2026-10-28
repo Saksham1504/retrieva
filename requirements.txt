@@ -1,0 +1,9 @@
+sentence-transformers
+rank_bm25
+numpy
+pyyaml
+pydantic
+pytest
+ruff
+pypdf        
+beautifulsoup4
