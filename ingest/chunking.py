@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
-from rag.ingest.loaders import load_all
+
+from ingest.loaders import load_all
 
 CHUNK_SIZE = 1200   # max characters per chunk (roughly 300 tokens)
 OVERLAP = 150       # characters shared between neighbouring chunks
@@ -40,7 +41,10 @@ def chunk_text(text):
 def build_chunks(docs):
     rows = []
     for d in docs:
-        for i, (s, e) in enumerate(chunk_text(d["text"])):
+        spans = chunk_text(d["text"])
+        if not spans:
+            print(f"WARNING: no chunks produced for {d['source']} (empty text?)")
+        for i, (s, e) in enumerate(spans):
             rows.append({
                 "chunk_id": f"{d['doc_id']}_c{i:04d}",
                 "doc_id": d["doc_id"],
@@ -55,6 +59,7 @@ def build_chunks(docs):
 
 
 if __name__ == "__main__":
+    # Run from the rag_doc root:  python -m ingest.chunking
     rows = build_chunks(load_all("data/raw"))
     out = Path("data/processed/chunks.jsonl")
     out.parent.mkdir(parents=True, exist_ok=True)
