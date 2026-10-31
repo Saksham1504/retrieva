@@ -78,18 +78,28 @@ def make_retriever(name, chunks):
     if name == "bm25":
         from retrieval.bm25 import BM25Retriever
         return BM25Retriever(chunks)
-    if name == "dense":
-        from retrieval.dense import DenseRetriever
-        return DenseRetriever(chunks, cache_dir=str(ROOT / "data" / "processed"))
-    if name == "hybrid":
-        from retrieval.bm25 import BM25Retriever
-        from retrieval.dense import DenseRetriever
-        from retrieval.hybrid import HybridRetriever
-        return HybridRetriever([
-            BM25Retriever(chunks),
-            DenseRetriever(chunks, cache_dir=str(ROOT / "data" / "processed")),
-        ])
-    raise SystemExit(f"Unknown retriever {name!r}. Available: bm25, dense, hybrid")
+    if name in ("dense", "dense_rerank"):
+        first_stage = _dense(chunks)
+    elif name in ("hybrid", "hybrid_rerank"):
+        first_stage = _hybrid(chunks)
+    else:
+        raise SystemExit(f"Unknown retriever {name!r}. "
+                         "Available: bm25, dense, hybrid, dense_rerank, hybrid_rerank")
+    if name.endswith("_rerank"):
+        from retrieval.rerank import RerankRetriever
+        return RerankRetriever(first_stage, chunks, candidates=20)
+    return first_stage
+
+
+def _dense(chunks):
+    from retrieval.dense import DenseRetriever
+    return DenseRetriever(chunks, cache_dir=str(ROOT / "data" / "processed"))
+
+
+def _hybrid(chunks):
+    from retrieval.bm25 import BM25Retriever
+    from retrieval.hybrid import HybridRetriever
+    return HybridRetriever([BM25Retriever(chunks), _dense(chunks)])
 
 
 def print_table(by_type, overall, k):
