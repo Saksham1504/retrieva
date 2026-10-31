@@ -1,0 +1,14 @@
+{
+  "chunks_file": "data\\processed\\chunks.frozen.jsonl",
+  "chunks_sha256": "90f4df47ee28e6d0467698bd7410688143e067db8563c0f4389512ba3c7542f2",
+  "n_chunks": 408,
+  "n_questions": 30,
+  "by_type": {
+    "lookup": 8,
+    "multi_chunk": 6,
+    "paraphrase": 6,
+    "keyword": 5,
+    "unanswerable": 5
+  },
+  "built": "2026-10-31"
+}
