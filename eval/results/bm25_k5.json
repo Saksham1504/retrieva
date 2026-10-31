@@ -4,10 +4,10 @@
   "chunks_sha256": "90f4df47ee28e6d0467698bd7410688143e067db8563c0f4389512ba3c7542f2",
   "n_chunks": 408,
   "overall": {
-    "recall": 0.8266666666666667,
-    "full": 0.8,
-    "precision": 0.264,
-    "mrr": 0.7333333333333333,
+    "recall": 0.8666666666666667,
+    "full": 0.84,
+    "precision": 0.272,
+    "mrr": 0.7733333333333333,
     "n": 25
   },
   "by_type": {
@@ -26,10 +26,10 @@
       "n": 6
     },
     "paraphrase": {
-      "recall": 0.5,
-      "full": 0.5,
-      "precision": 0.16666666666666669,
-      "mrr": 0.5,
+      "recall": 0.6666666666666666,
+      "full": 0.6666666666666666,
+      "precision": 0.2,
+      "mrr": 0.6666666666666666,
       "n": 6
     },
     "keyword": {
@@ -485,13 +485,13 @@
       ]
     },
     {
-      "recall": 0.0,
-      "full": 0.0,
-      "precision": 0.0,
-      "mrr": 0.0,
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.2,
+      "mrr": 1.0,
       "covered": [
-        false,
-        false
+        true,
+        true
       ],
       "retrieved": [
         "geeks_for_geeks_c0128",

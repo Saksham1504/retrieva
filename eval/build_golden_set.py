@@ -189,9 +189,11 @@ QUESTIONS = [
         "answer": "Use a lossless-join decomposition: a natural join of the two new relations returns the original relation. This holds when the attributes of the two relations together cover the original and their common attribute is a candidate key or super key in at least one of them.",
         "evidence": [
             ["if we perform a natural join of relation R1 and R2, it will return the original relation R",
-             "it becomes feasible to reconstruct the relation R from decomposed tables R1 and R2 by using Joins"],
+             "it becomes feasible to reconstruct the relation R from decomposed tables R1 and R2 by using Joins",
+             "the original relation can be reconstructed by joining the decomposed relations"],
             ["the common attribute must be a candidate key or super key in either relation R1, R2, or both",
-             "The common attribute must be a key for at least one relation"],
+             "The common attribute must be a key for at least one relation",
+             "is a lossless-join decomposition if at least one of the following functional dependencies is in F+"],
         ],
     },
     {
@@ -212,6 +214,7 @@ QUESTIONS = [
         "evidence": [[
             "A Dirty read is a situation when a transaction reads data that has not yet been committed",
             "Dirty read problem occurs when one transaction updates an item",
+            "Dirty read problem comes under the scenario of Write-Read conflict",
         ]],
     },
     {

@@ -1,0 +1,795 @@
+{
+  "retriever": "dense",
+  "k": 5,
+  "chunks_sha256": "90f4df47ee28e6d0467698bd7410688143e067db8563c0f4389512ba3c7542f2",
+  "n_chunks": 408,
+  "overall": {
+    "recall": 0.99,
+    "full": 0.96,
+    "precision": 0.336,
+    "mrr": 0.8446666666666667,
+    "n": 25
+  },
+  "by_type": {
+    "lookup": {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.35000000000000003,
+      "mrr": 1.0,
+      "n": 8
+    },
+    "multi_chunk": {
+      "recall": 0.9583333333333334,
+      "full": 0.8333333333333334,
+      "precision": 0.43333333333333335,
+      "mrr": 0.875,
+      "n": 6
+    },
+    "paraphrase": {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.33333333333333337,
+      "mrr": 0.7777777777777778,
+      "n": 6
+    },
+    "keyword": {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.2,
+      "mrr": 0.64,
+      "n": 5
+    }
+  },
+  "questions": [
+    {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.4,
+      "mrr": 1.0,
+      "covered": [
+        true
+      ],
+      "retrieved": [
+        "geeks_for_geeks_c0035",
+        "geeks_for_geeks_c0037",
+        "geeks_for_geeks_c0034",
+        "geeks_for_geeks_c0253",
+        "geeks_for_geeks_c0251"
+      ],
+      "id": "q01",
+      "type": "lookup",
+      "question": "What are the three levels of data abstraction in a DBMS?",
+      "top1_score": 0.8625524640083313,
+      "scores": [
+        0.8625524640083313,
+        0.8309089541435242,
+        0.8126894235610962,
+        0.7870142459869385,
+        0.7763595581054688
+      ]
+    },
+    {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.4,
+      "mrr": 1.0,
+      "covered": [
+        true
+      ],
+      "retrieved": [
+        "ER_dbms_c0003",
+        "ER_dbms_c0004",
+        "geeks_for_geeks_c0041",
+        "ER_dbms_c0005",
+        "ER_dbms_c0012"
+      ],
+      "id": "q02",
+      "type": "lookup",
+      "question": "Which symbol is used to draw a weak entity in an ER diagram?",
+      "top1_score": 0.8303892612457275,
+      "scores": [
+        0.8303892612457275,
+        0.8021122217178345,
+        0.8001092672348022,
+        0.7639029026031494,
+        0.7637753486633301
+      ]
+    },
+    {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.2,
+      "mrr": 1.0,
+      "covered": [
+        true
+      ],
+      "retrieved": [
+        "geeks_for_geeks_c0016",
+        "geeks_for_geeks_c0017",
+        "geeks_for_geeks_c0012",
+        "geeks_for_geeks_c0014",
+        "geeks_for_geeks_c0018"
+      ],
+      "id": "q03",
+      "type": "lookup",
+      "question": "In a 3-tier DBMS architecture, what sits between the client and the database server?",
+      "top1_score": 0.8164538741111755,
+      "scores": [
+        0.8164538741111755,
+        0.8136677145957947,
+        0.7839881181716919,
+        0.7714223861694336,
+        0.7213764190673828
+      ]
+    },
+    {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.4,
+      "mrr": 1.0,
+      "covered": [
+        true
+      ],
+      "retrieved": [
+        "geeks_for_geeks_c0251",
+        "geeks_for_geeks_c0249",
+        "geeks_for_geeks_c0252",
+        "geeks_for_geeks_c0250",
+        "geeks_for_geeks_c0253"
+      ],
+      "id": "q04",
+      "type": "lookup",
+      "question": "Which transaction isolation level is the lowest, and what does it allow?",
+      "top1_score": 0.8284675478935242,
+      "scores": [
+        0.8284675478935242,
+        0.8247132301330566,
+        0.7998279929161072,
+        0.7772994041442871,
+        0.7719592452049255
+      ]
+    },
+    {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.4,
+      "mrr": 1.0,
+      "covered": [
+        true
+      ],
+      "retrieved": [
+        "geeks_for_geeks_c0224",
+        "geeks_for_geeks_c0221",
+        "geeks_for_geeks_c0226",
+        "geeks_for_geeks_c0073",
+        "geeks_for_geeks_c0220"
+      ],
+      "id": "q05",
+      "type": "lookup",
+      "question": "Which ACID property is known as the 'all or nothing rule', and what does it mean?",
+      "top1_score": 0.6691621541976929,
+      "scores": [
+        0.6691621541976929,
+        0.608646810054779,
+        0.596854031085968,
+        0.5824633836746216,
+        0.5821548700332642
+      ]
+    },
+    {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.2,
+      "mrr": 1.0,
+      "covered": [
+        true
+      ],
+      "retrieved": [
+        "geeks_for_geeks_c0232",
+        "geeks_for_geeks_c0240",
+        "geeks_for_geeks_c0234",
+        "geeks_for_geeks_c0243",
+        "geeks_for_geeks_c0233"
+      ],
+      "id": "q06",
+      "type": "lookup",
+      "question": "In log-based recovery, what does the write_item(T, X, old_value, new_value) log entry record?",
+      "top1_score": 0.8057339191436768,
+      "scores": [
+        0.8057339191436768,
+        0.804436981678009,
+        0.7343075275421143,
+        0.7321773171424866,
+        0.7228789925575256
+      ]
+    },
+    {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.4,
+      "mrr": 1.0,
+      "covered": [
+        true
+      ],
+      "retrieved": [
+        "geeks_for_geeks_c0368",
+        "geeks_for_geeks_c0367",
+        "geeks_for_geeks_c0375",
+        "geeks_for_geeks_c0384",
+        "geeks_for_geeks_c0387"
+      ],
+      "id": "q07",
+      "type": "lookup",
+      "question": "What is the time complexity of search, insert and delete in a B-Tree?",
+      "top1_score": 0.8617328405380249,
+      "scores": [
+        0.8617328405380249,
+        0.8222241401672363,
+        0.7845802307128906,
+        0.7781080007553101,
+        0.777168869972229
+      ]
+    },
+    {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.4,
+      "mrr": 1.0,
+      "covered": [
+        true
+      ],
+      "retrieved": [
+        "geeks_for_geeks_c0195",
+        "geeks_for_geeks_c0175",
+        "geeks_for_geeks_c0177",
+        "geeks_for_geeks_c0197",
+        "geeks_for_geeks_c0200"
+      ],
+      "id": "q08",
+      "type": "lookup",
+      "question": "How many clustered indexes can a single table have?",
+      "top1_score": 0.7530168294906616,
+      "scores": [
+        0.7530168294906616,
+        0.7505233287811279,
+        0.7410174012184143,
+        0.7408241033554077,
+        0.7399580478668213
+      ]
+    },
+    {
+      "recall": 0.75,
+      "full": 0.0,
+      "precision": 0.2,
+      "mrr": 1.0,
+      "covered": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "retrieved": [
+        "geeks_for_geeks_c0089",
+        "geeks_for_geeks_c0086",
+        "geeks_for_geeks_c0087",
+        "geeks_for_geeks_c0293",
+        "geeks_for_geeks_c0213"
+      ],
+      "id": "q09",
+      "type": "multi_chunk",
+      "question": "What are insertion, deletion and update anomalies, and how can they be avoided?",
+      "top1_score": 0.7894402146339417,
+      "scores": [
+        0.7894402146339417,
+        0.7449324131011963,
+        0.7377409934997559,
+        0.7348150014877319,
+        0.7166222333908081
+      ]
+    },
+    {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.4,
+      "mrr": 1.0,
+      "covered": [
+        true,
+        true,
+        true
+      ],
+      "retrieved": [
+        "geeks_for_geeks_c0124",
+        "geeks_for_geeks_c0122",
+        "geeks_for_geeks_c0125",
+        "geeks_for_geeks_c0123",
+        "geeks_for_geeks_c0093"
+      ],
+      "id": "q10",
+      "type": "multi_chunk",
+      "question": "What is attribute closure, and how is it used to find super keys and candidate keys?",
+      "top1_score": 0.8949780464172363,
+      "scores": [
+        0.8949780464172363,
+        0.786203145980835,
+        0.7827513217926025,
+        0.7750065326690674,
+        0.7714806795120239
+      ]
+    },
+    {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.4,
+      "mrr": 0.25,
+      "covered": [
+        true,
+        true
+      ],
+      "retrieved": [
+        "geeks_for_geeks_c0078",
+        "geeks_for_geeks_c0038",
+        "geeks_for_geeks_c0037",
+        "geeks_for_geeks_c0080",
+        "geeks_for_geeks_c0079"
+      ],
+      "id": "q11",
+      "type": "multi_chunk",
+      "question": "According to Codd's rules, how must NULL values be treated, and what does the physical data independence rule require?",
+      "top1_score": 0.7458513975143433,
+      "scores": [
+        0.7458513975143433,
+        0.7330409288406372,
+        0.7245752811431885,
+        0.7153922319412231,
+        0.7045646905899048
+      ]
+    },
+    {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.6,
+      "mrr": 1.0,
+      "covered": [
+        true,
+        true
+      ],
+      "retrieved": [
+        "geeks_for_geeks_c0161",
+        "geeks_for_geeks_c0163",
+        "geeks_for_geeks_c0105",
+        "geeks_for_geeks_c0164",
+        "geeks_for_geeks_c0104"
+      ],
+      "id": "q12",
+      "type": "multi_chunk",
+      "question": "Which join types does SQL support, and which one returns all rows from both tables with NULLs where there is no match?",
+      "top1_score": 0.7431108951568604,
+      "scores": [
+        0.7431108951568604,
+        0.7410656213760376,
+        0.7402002215385437,
+        0.7300611138343811,
+        0.7291567325592041
+      ]
+    },
+    {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.6,
+      "mrr": 1.0,
+      "covered": [
+        true,
+        true,
+        true
+      ],
+      "retrieved": [
+        "geeks_for_geeks_c0234",
+        "geeks_for_geeks_c0241",
+        "geeks_for_geeks_c0278",
+        "geeks_for_geeks_c0235",
+        "geeks_for_geeks_c0237"
+      ],
+      "id": "q13",
+      "type": "multi_chunk",
+      "question": "How do the deferred update and immediate update recovery techniques differ, and which one needs both undo and redo?",
+      "top1_score": 0.847599983215332,
+      "scores": [
+        0.847599983215332,
+        0.803716242313385,
+        0.7737211585044861,
+        0.7571207284927368,
+        0.7507107257843018
+      ]
+    },
+    {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.4,
+      "mrr": 1.0,
+      "covered": [
+        true,
+        true
+      ],
+      "retrieved": [
+        "geeks_for_geeks_c0026",
+        "geeks_for_geeks_c0028",
+        "geeks_for_geeks_c0019",
+        "geeks_for_geeks_c0027",
+        "geeks_for_geeks_c0022"
+      ],
+      "id": "q14",
+      "type": "multi_chunk",
+      "question": "What are the main challenges of database security in a DBMS, and which features help enhance it?",
+      "top1_score": 0.8860698342323303,
+      "scores": [
+        0.8860698342323303,
+        0.8462848663330078,
+        0.8097278475761414,
+        0.7931573390960693,
+        0.7818630337715149
+      ]
+    },
+    {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.4,
+      "mrr": 1.0,
+      "covered": [
+        true,
+        true
+      ],
+      "retrieved": [
+        "geeks_for_geeks_c0007",
+        "geeks_for_geeks_c0006",
+        "geeks_for_geeks_c0032",
+        "geeks_for_geeks_c0083",
+        "geeks_for_geeks_c0213"
+      ],
+      "id": "q15",
+      "type": "paraphrase",
+      "question": "In a university that keeps separate files per department, what goes wrong when a student changes their phone number?",
+      "top1_score": 0.7620862722396851,
+      "scores": [
+        0.7620862722396851,
+        0.7160587310791016,
+        0.6258699297904968,
+        0.6066533327102661,
+        0.6015819311141968
+      ]
+    },
+    {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.4,
+      "mrr": 1.0,
+      "covered": [
+        true
+      ],
+      "retrieved": [
+        "geeks_for_geeks_c0293",
+        "geeks_for_geeks_c0212",
+        "geeks_for_geeks_c0213",
+        "geeks_for_geeks_c0292",
+        "geeks_for_geeks_c0211"
+      ],
+      "id": "q16",
+      "type": "paraphrase",
+      "question": "What problem occurs when two transactions work on the same item and one transaction's write wipes out the other's update?",
+      "top1_score": 0.8152214884757996,
+      "scores": [
+        0.8152214884757996,
+        0.7995642423629761,
+        0.7901142835617065,
+        0.782532274723053,
+        0.7750539779663086
+      ]
+    },
+    {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.2,
+      "mrr": 0.3333333333333333,
+      "covered": [
+        true,
+        true
+      ],
+      "retrieved": [
+        "geeks_for_geeks_c0165",
+        "geeks_for_geeks_c0162",
+        "geeks_for_geeks_c0128",
+        "geeks_for_geeks_c0064",
+        "geeks_for_geeks_c0164"
+      ],
+      "id": "q17",
+      "type": "paraphrase",
+      "question": "When splitting one table into two smaller ones, how can we make sure joining them back gives exactly the original data?",
+      "top1_score": 0.7205793857574463,
+      "scores": [
+        0.7205793857574463,
+        0.7019307017326355,
+        0.7017108201980591,
+        0.6992103457450867,
+        0.69864821434021
+      ]
+    },
+    {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.4,
+      "mrr": 1.0,
+      "covered": [
+        true
+      ],
+      "retrieved": [
+        "geeks_for_geeks_c0192",
+        "geeks_for_geeks_c0193",
+        "geeks_for_geeks_c0190",
+        "geeks_for_geeks_c0198",
+        "geeks_for_geeks_c0170"
+      ],
+      "id": "q18",
+      "type": "paraphrase",
+      "question": "How can a database find rows without examining every row of a huge table?",
+      "top1_score": 0.7626833915710449,
+      "scores": [
+        0.7626833915710449,
+        0.72385573387146,
+        0.7203375101089478,
+        0.716056764125824,
+        0.7067326307296753
+      ]
+    },
+    {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.2,
+      "mrr": 0.3333333333333333,
+      "covered": [
+        true
+      ],
+      "retrieved": [
+        "geeks_for_geeks_c0281",
+        "geeks_for_geeks_c0248",
+        "geeks_for_geeks_c0212",
+        "geeks_for_geeks_c0286",
+        "geeks_for_geeks_c0264"
+      ],
+      "id": "q19",
+      "type": "paraphrase",
+      "question": "What is it called when a transaction reads data written by another transaction that later fails and is rolled back?",
+      "top1_score": 0.820107102394104,
+      "scores": [
+        0.820107102394104,
+        0.8095129728317261,
+        0.8039484620094299,
+        0.7875804901123047,
+        0.7817095518112183
+      ]
+    },
+    {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.4,
+      "mrr": 1.0,
+      "covered": [
+        true
+      ],
+      "retrieved": [
+        "ER_dbms_c0006",
+        "ER_dbms_c0005",
+        "geeks_for_geeks_c0044",
+        "geeks_for_geeks_c0067",
+        "geeks_for_geeks_c0043"
+      ],
+      "id": "q20",
+      "type": "paraphrase",
+      "question": "What kind of attribute is Age when it can be worked out from the date of birth?",
+      "top1_score": 0.6264485120773315,
+      "scores": [
+        0.6264485120773315,
+        0.6198967695236206,
+        0.6196111440658569,
+        0.6162525415420532,
+        0.6153477430343628
+      ]
+    },
+    {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.2,
+      "mrr": 0.5,
+      "covered": [
+        true
+      ],
+      "retrieved": [
+        "geeks_for_geeks_c0088",
+        "geeks_for_geeks_c0160",
+        "geeks_for_geeks_c0003",
+        "geeks_for_geeks_c0182",
+        "geeks_for_geeks_c0080"
+      ],
+      "id": "q21",
+      "type": "keyword",
+      "question": "REVOKE SELECT, UPDATE ON MY_TABLE FROM USER1, USER2",
+      "top1_score": 0.7012042999267578,
+      "scores": [
+        0.7012042999267578,
+        0.6927619576454163,
+        0.6781041026115417,
+        0.6678665280342102,
+        0.6665588021278381
+      ]
+    },
+    {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.2,
+      "mrr": 1.0,
+      "covered": [
+        true
+      ],
+      "retrieved": [
+        "geeks_for_geeks_c0169",
+        "geeks_for_geeks_c0196",
+        "geeks_for_geeks_c0170",
+        "geeks_for_geeks_c0337",
+        "geeks_for_geeks_c0355"
+      ],
+      "id": "q22",
+      "type": "keyword",
+      "question": "CREATE SEQUENCE dept_deptid_seq INCREMENT BY 10 START WITH 120",
+      "top1_score": 0.7617982625961304,
+      "scores": [
+        0.7617982625961304,
+        0.6561142802238464,
+        0.6466151475906372,
+        0.5967574119567871,
+        0.5906026363372803
+      ]
+    },
+    {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.2,
+      "mrr": 0.2,
+      "covered": [
+        true,
+        true
+      ],
+      "retrieved": [
+        "geeks_for_geeks_c0340",
+        "geeks_for_geeks_c0099",
+        "geeks_for_geeks_c0270",
+        "geeks_for_geeks_c0095",
+        "geeks_for_geeks_c0339"
+      ],
+      "id": "q23",
+      "type": "keyword",
+      "question": "W_TS(X) R_TS(X)",
+      "top1_score": 0.7122102975845337,
+      "scores": [
+        0.7122102975845337,
+        0.667120099067688,
+        0.6669902801513672,
+        0.6615728139877319,
+        0.6575878858566284
+      ]
+    },
+    {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.2,
+      "mrr": 0.5,
+      "covered": [
+        true
+      ],
+      "retrieved": [
+        "geeks_for_geeks_c0180",
+        "geeks_for_geeks_c0152",
+        "geeks_for_geeks_c0100",
+        "geeks_for_geeks_c0151",
+        "geeks_for_geeks_c0196"
+      ],
+      "id": "q24",
+      "type": "keyword",
+      "question": "SELECT DISTINCT ADDRESS FROM STUDENT",
+      "top1_score": 0.6770962476730347,
+      "scores": [
+        0.6770962476730347,
+        0.6651818156242371,
+        0.6627126932144165,
+        0.6604882478713989,
+        0.6490789651870728
+      ]
+    },
+    {
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.2,
+      "mrr": 1.0,
+      "covered": [
+        true
+      ],
+      "retrieved": [
+        "geeks_for_geeks_c0118",
+        "geeks_for_geeks_c0119",
+        "geeks_for_geeks_c0120",
+        "geeks_for_geeks_c0113",
+        "geeks_for_geeks_c0112"
+      ],
+      "id": "q25",
+      "type": "keyword",
+      "question": "Fifth Normal Form Projected Normal Form",
+      "top1_score": 0.761902928352356,
+      "scores": [
+        0.761902928352356,
+        0.732140064239502,
+        0.7008228302001953,
+        0.6791020035743713,
+        0.6440752148628235
+      ]
+    }
+  ],
+  "unanswerable": [
+    {
+      "id": "q26",
+      "question": "How does sharding work in MongoDB?",
+      "top1_score": 0.745388388633728,
+      "retrieved": [
+        "geeks_for_geeks_c0362",
+        "geeks_for_geeks_c0360",
+        "geeks_for_geeks_c0363",
+        "geeks_for_geeks_c0364",
+        "geeks_for_geeks_c0358"
+      ]
+    },
+    {
+      "id": "q27",
+      "question": "What is the CAP theorem and how does it apply to NoSQL databases?",
+      "top1_score": 0.698418140411377,
+      "retrieved": [
+        "geeks_for_geeks_c0362",
+        "geeks_for_geeks_c0080",
+        "geeks_for_geeks_c0091",
+        "geeks_for_geeks_c0222",
+        "geeks_for_geeks_c0127"
+      ]
+    },
+    {
+      "id": "q28",
+      "question": "How do I tune the InnoDB buffer pool size in MySQL?",
+      "top1_score": 0.6744471788406372,
+      "retrieved": [
+        "geeks_for_geeks_c0190",
+        "geeks_for_geeks_c0362",
+        "geeks_for_geeks_c0211",
+        "geeks_for_geeks_c0209",
+        "geeks_for_geeks_c0210"
+      ]
+    },
+    {
+      "id": "q29",
+      "question": "What is a bitmap index and when should it be used?",
+      "top1_score": 0.696609616279602,
+      "retrieved": [
+        "geeks_for_geeks_c0205",
+        "geeks_for_geeks_c0192",
+        "geeks_for_geeks_c0172",
+        "geeks_for_geeks_c0366",
+        "geeks_for_geeks_c0173"
+      ]
+    },
+    {
+      "id": "q30",
+      "question": "How does gradient descent update the weights of a neural network?",
+      "top1_score": 0.5907459259033203,
+      "retrieved": [
+        "geeks_for_geeks_c0137",
+        "geeks_for_geeks_c0088",
+        "ER_dbms_c0013",
+        "geeks_for_geeks_c0087",
+        "geeks_for_geeks_c0381"
+      ]
+    }
+  ]
+}

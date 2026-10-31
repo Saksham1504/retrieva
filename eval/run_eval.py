@@ -78,7 +78,18 @@ def make_retriever(name, chunks):
     if name == "bm25":
         from retrieval.bm25 import BM25Retriever
         return BM25Retriever(chunks)
-    raise SystemExit(f"Unknown retriever {name!r}. Available: bm25")
+    if name == "dense":
+        from retrieval.dense import DenseRetriever
+        return DenseRetriever(chunks, cache_dir=str(ROOT / "data" / "processed"))
+    if name == "hybrid":
+        from retrieval.bm25 import BM25Retriever
+        from retrieval.dense import DenseRetriever
+        from retrieval.hybrid import HybridRetriever
+        return HybridRetriever([
+            BM25Retriever(chunks),
+            DenseRetriever(chunks, cache_dir=str(ROOT / "data" / "processed")),
+        ])
+    raise SystemExit(f"Unknown retriever {name!r}. Available: bm25, dense, hybrid")
 
 
 def print_table(by_type, overall, k):
