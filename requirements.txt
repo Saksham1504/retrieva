@@ -7,3 +7,4 @@ pytest
 ruff
 pypdf        
 beautifulsoup4
+openai

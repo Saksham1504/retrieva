@@ -1,0 +1,63 @@
+{
+  "summary": {
+    "retriever": "hybrid_rerank",
+    "abstain_below": 1.4,
+    "generator": "gpt-5-mini",
+    "judge": "gpt-5-mini",
+    "unanswerable": {
+      "n": 1,
+      "refused": 1,
+      "answered_by_mistake": []
+    }
+  },
+  "records": [
+    {
+      "id": "q01",
+      "type": "lookup",
+      "answerable": true,
+      "error": "RateLimitError: Error code: 429 - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.",
+      "abstained": null
+    },
+    {
+      "id": "q09",
+      "type": "multi_chunk",
+      "answerable": true,
+      "error": "RateLimitError: Error code: 429 - You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.",
+      "abstained": null
+    },
+    {
+      "id": "q26",
+      "type": "unanswerable",
+      "answerable": false,
+      "question": "How does sharding work in MongoDB?",
+      "top1_score": -10.17602252960205,
+      "sources": [
+        {
+          "chunk_id": "geeks_for_geeks_c0149",
+          "score": -10.17602252960205
+        },
+        {
+          "chunk_id": "geeks_for_geeks_c0148",
+          "score": -10.360719680786133
+        },
+        {
+          "chunk_id": "geeks_for_geeks_c0358",
+          "score": -10.757469177246094
+        },
+        {
+          "chunk_id": "geeks_for_geeks_c0364",
+          "score": -10.795967102050781
+        },
+        {
+          "chunk_id": "geeks_for_geeks_c0218",
+          "score": -10.801252365112305
+        }
+      ],
+      "answer": "I couldn't find a confident answer to that in the documents.",
+      "abstained": true,
+      "abstained_by": "gate",
+      "cited": [],
+      "invalid_citations": []
+    }
+  ]
+}
