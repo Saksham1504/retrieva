@@ -4,10 +4,10 @@
   "chunks_sha256": "90f4df47ee28e6d0467698bd7410688143e067db8563c0f4389512ba3c7542f2",
   "n_chunks": 408,
   "overall": {
-    "recall": 0.94,
-    "full": 0.92,
-    "precision": 0.336,
-    "mrr": 0.87,
+    "recall": 0.98,
+    "full": 0.96,
+    "precision": 0.34400000000000003,
+    "mrr": 0.91,
     "n": 25
   },
   "by_type": {
@@ -26,10 +26,10 @@
       "n": 6
     },
     "paraphrase": {
-      "recall": 0.8333333333333334,
-      "full": 0.8333333333333334,
-      "precision": 0.3,
-      "mrr": 0.7083333333333334,
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.33333333333333337,
+      "mrr": 0.875,
       "n": 6
     },
     "keyword": {
@@ -39,6 +39,14 @@
       "mrr": 0.9,
       "n": 5
     }
+  },
+  "abstention": {
+    "threshold": 1.3946630358695984,
+    "correct_refusals": 15,
+    "n_unanswerable": 15,
+    "wrong_refusals": 3,
+    "n_answerable": 25,
+    "balanced_accuracy": 0.94
   },
   "questions": [
     {
@@ -513,12 +521,12 @@
       ]
     },
     {
-      "recall": 0.0,
-      "full": 0.0,
-      "precision": 0.0,
-      "mrr": 0.0,
+      "recall": 1.0,
+      "full": 1.0,
+      "precision": 0.2,
+      "mrr": 1.0,
       "covered": [
-        false
+        true
       ],
       "retrieved": [
         "geeks_for_geeks_c0198",
@@ -789,6 +797,126 @@
         "geeks_for_geeks_c0136",
         "geeks_for_geeks_c0213",
         "geeks_for_geeks_c0087"
+      ]
+    },
+    {
+      "id": "q31",
+      "question": "What is the difference between a star schema and a snowflake schema in data warehousing?",
+      "top1_score": -4.2161173820495605,
+      "retrieved": [
+        "geeks_for_geeks_c0084",
+        "geeks_for_geeks_c0085",
+        "geeks_for_geeks_c0019",
+        "geeks_for_geeks_c0383",
+        "geeks_for_geeks_c0037"
+      ]
+    },
+    {
+      "id": "q32",
+      "question": "How do I set up master-slave replication in MySQL?",
+      "top1_score": -9.866986274719238,
+      "retrieved": [
+        "geeks_for_geeks_c0160",
+        "geeks_for_geeks_c0148",
+        "geeks_for_geeks_c0373",
+        "geeks_for_geeks_c0379",
+        "geeks_for_geeks_c0161"
+      ]
+    },
+    {
+      "id": "q33",
+      "question": "How does Neo4j store relationships between nodes in a graph database?",
+      "top1_score": -2.3145885467529297,
+      "retrieved": [
+        "geeks_for_geeks_c0272",
+        "geeks_for_geeks_c0274",
+        "geeks_for_geeks_c0271",
+        "geeks_for_geeks_c0385",
+        "geeks_for_geeks_c0383"
+      ]
+    },
+    {
+      "id": "q34",
+      "question": "What is the average-case time complexity of quicksort?",
+      "top1_score": -6.611347675323486,
+      "retrieved": [
+        "geeks_for_geeks_c0367",
+        "geeks_for_geeks_c0368",
+        "geeks_for_geeks_c0276",
+        "geeks_for_geeks_c0244",
+        "geeks_for_geeks_c0177"
+      ]
+    },
+    {
+      "id": "q35",
+      "question": "How does the Paxos algorithm reach consensus between distributed nodes?",
+      "top1_score": -7.9095659255981445,
+      "retrieved": [
+        "geeks_for_geeks_c0272",
+        "geeks_for_geeks_c0274",
+        "geeks_for_geeks_c0374",
+        "geeks_for_geeks_c0370",
+        "geeks_for_geeks_c0373"
+      ]
+    },
+    {
+      "id": "q36",
+      "question": "How does the WiredTiger storage engine manage its cache?",
+      "top1_score": -7.2159104347229,
+      "retrieved": [
+        "geeks_for_geeks_c0235",
+        "geeks_for_geeks_c0382",
+        "geeks_for_geeks_c0000",
+        "geeks_for_geeks_c0018",
+        "geeks_for_geeks_c0079"
+      ]
+    },
+    {
+      "id": "q37",
+      "question": "How does Redis persistence work with RDB snapshots and AOF?",
+      "top1_score": -9.278131484985352,
+      "retrieved": [
+        "geeks_for_geeks_c0237",
+        "geeks_for_geeks_c0235",
+        "geeks_for_geeks_c0234",
+        "geeks_for_geeks_c0241",
+        "geeks_for_geeks_c0236"
+      ]
+    },
+    {
+      "id": "q38",
+      "question": "How do I use window functions such as ROW_NUMBER() in SQL?",
+      "top1_score": 0.3332401514053345,
+      "retrieved": [
+        "geeks_for_geeks_c0153",
+        "geeks_for_geeks_c0183",
+        "geeks_for_geeks_c0152",
+        "geeks_for_geeks_c0187",
+        "geeks_for_geeks_c0155"
+      ]
+    },
+    {
+      "id": "q39",
+      "question": "How do I install PostgreSQL on Ubuntu?",
+      "top1_score": -9.954594612121582,
+      "retrieved": [
+        "geeks_for_geeks_c0148",
+        "geeks_for_geeks_c0080",
+        "geeks_for_geeks_c0205",
+        "geeks_for_geeks_c0156",
+        "geeks_for_geeks_c0158"
+      ]
+    },
+    {
+      "id": "q40",
+      "question": "How does the PageRank algorithm rank web pages?",
+      "top1_score": -8.987417221069336,
+      "retrieved": [
+        "geeks_for_geeks_c0176",
+        "geeks_for_geeks_c0368",
+        "geeks_for_geeks_c0235",
+        "geeks_for_geeks_c0236",
+        "geeks_for_geeks_c0174"
       ]
     }
   ]

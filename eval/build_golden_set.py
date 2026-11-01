@@ -205,6 +205,8 @@ QUESTIONS = [
             "Without indexing, the SQL server has to scan the whole table for your data",
             "If you do not have an index on the column, then a full table scan occurs",
             "Indexing improves database performance by minimizing the number of disc visits",
+            "SQL Server can use the clustered index to quickly locate the rows that match the WHERE condition",
+            "The database may rapidly discover rows that match a specific value or collection of values",
         ]],
     },
     {
@@ -298,6 +300,58 @@ QUESTIONS = [
         "id": "q30", "type": "unanswerable",
         "question": "How does gradient descent update the weights of a neural network?",
         "absent_terms": ["gradient descent"],
+    },
+    # More unanswerable questions: some near-misses on DBMS topics the notes do not cover,
+    # some completely off-topic, so the abstention threshold is not tuned on five examples.
+    {
+        "id": "q31", "type": "unanswerable",
+        "question": "What is the difference between a star schema and a snowflake schema in data warehousing?",
+        "absent_terms": ["star schema", "snowflake schema"],
+    },
+    {
+        "id": "q32", "type": "unanswerable",
+        "question": "How do I set up master-slave replication in MySQL?",
+        "absent_terms": ["master-slave", "read replica"],
+    },
+    {
+        "id": "q33", "type": "unanswerable",
+        "question": "How does Neo4j store relationships between nodes in a graph database?",
+        "absent_terms": ["Neo4j"],
+    },
+    {
+        "id": "q34", "type": "unanswerable",
+        "question": "What is the average-case time complexity of quicksort?",
+        "absent_terms": ["quicksort"],
+    },
+    {
+        "id": "q35", "type": "unanswerable",
+        "question": "How does the Paxos algorithm reach consensus between distributed nodes?",
+        "absent_terms": ["Paxos"],
+    },
+    {
+        "id": "q36", "type": "unanswerable",
+        "question": "How does the WiredTiger storage engine manage its cache?",
+        "absent_terms": ["WiredTiger"],
+    },
+    {
+        "id": "q37", "type": "unanswerable",
+        "question": "How does Redis persistence work with RDB snapshots and AOF?",
+        "absent_terms": ["Redis"],
+    },
+    {
+        "id": "q38", "type": "unanswerable",
+        "question": "How do I use window functions such as ROW_NUMBER() in SQL?",
+        "absent_terms": ["window function", "row_number"],
+    },
+    {
+        "id": "q39", "type": "unanswerable",
+        "question": "How do I install PostgreSQL on Ubuntu?",
+        "absent_terms": ["Ubuntu", "PostgreSQL"],
+    },
+    {
+        "id": "q40", "type": "unanswerable",
+        "question": "How does the PageRank algorithm rank web pages?",
+        "absent_terms": ["PageRank"],
     },
 ]
 

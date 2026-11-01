@@ -58,6 +58,31 @@ def summarize(rows):
     return out
 
 
+def abstention_stats(answerable_top1, unanswerable_top1, threshold):
+    """The system refuses to answer when the top-1 score is BELOW the threshold.
+    A good threshold refuses the unanswerable questions and answers the answerable ones."""
+    n_ans, n_un = len(answerable_top1), len(unanswerable_top1)
+    correct_refusals = sum(s < threshold for s in unanswerable_top1)
+    wrong_refusals = sum(s < threshold for s in answerable_top1)
+    balanced = 0.5 * (correct_refusals / n_un + (1 - wrong_refusals / n_ans))
+    return {"threshold": threshold, "correct_refusals": correct_refusals, "n_unanswerable": n_un,
+            "wrong_refusals": wrong_refusals, "n_answerable": n_ans, "balanced_accuracy": balanced}
+
+
+def sweep_thresholds(answerable_top1, unanswerable_top1):
+    """Try a threshold halfway between every pair of neighbouring observed scores."""
+    scores = sorted(set(answerable_top1) | set(unanswerable_top1))
+    candidates = [(a + b) / 2 for a, b in zip(scores, scores[1:])]
+    return [abstention_stats(answerable_top1, unanswerable_top1, t) for t in candidates]
+
+
+def best_threshold(sweep):
+    """Highest balanced accuracy; if several thresholds tie, take the middle one."""
+    top = max(round(r["balanced_accuracy"], 9) for r in sweep)
+    tied = [r for r in sweep if round(r["balanced_accuracy"], 9) == top]
+    return tied[len(tied) // 2]
+
+
 # ----------------------------------------------------------------------- helpers
 def load_jsonl(path):
     with open(path, encoding="utf-8") as f:
@@ -125,6 +150,11 @@ def main():
     ap.add_argument("--chunks", default=None,
                     help="chunks file (default: the one recorded in golden_set.meta.json)")
     ap.add_argument("--out-dir", default="eval/results")
+    ap.add_argument("--sweep", action="store_true",
+                    help="try many abstention thresholds on the top-1 scores and suggest one "
+                         "(use with a reranker config: raw BM25 or RRF scores are not comparable across queries)")
+    ap.add_argument("--abstain-below", type=float, default=None,
+                    help="report how a fixed abstention threshold performs: refuse when the top-1 score is below it")
     args = ap.parse_args()
 
     golden_path = resolve(args.golden)
@@ -184,13 +214,37 @@ def main():
             print(f"      missing group(s): {missing}")
             print(f"      retrieved: {r['retrieved']}")
 
+    abstention = None
     if unanswerable:
         ans_top1 = [r["top1_score"] for r in rows]
         un_top1 = [u["top1_score"] for u in unanswerable]
-        print("\nTOP-1 SCORE (for the abstention gate later)")
+        print(f"\nTOP-1 SCORE (for the abstention gate; {len(ans_top1)} answerable, {len(un_top1)} unanswerable)")
         print(f"  answerable   : min {min(ans_top1):.2f}  mean {mean(ans_top1):.2f}  max {max(ans_top1):.2f}")
         print(f"  unanswerable : min {min(un_top1):.2f}  mean {mean(un_top1):.2f}  max {max(un_top1):.2f}")
         print("  If these ranges overlap a lot, a raw retrieval score alone cannot decide when to abstain.")
+
+        if args.sweep:
+            sweep = sweep_thresholds(ans_top1, un_top1)
+            best = best_threshold(sweep)
+            near_best = [r for r in sweep if r["balanced_accuracy"] >= best["balanced_accuracy"] - 0.05]
+            print("\nABSTENTION THRESHOLD SWEEP (refuse when top-1 score < threshold)")
+            print(f"  {'threshold':>9}  {'refuses unanswerable':>21}  {'wrongly refuses answerable':>27}  {'balanced acc':>12}")
+            for r in near_best[:12]:
+                mark = "  <- suggested" if r is best else ""
+                print(f"  {r['threshold']:>9.2f}  {r['correct_refusals']:>13}/{r['n_unanswerable']:<7}  "
+                      f"{r['wrong_refusals']:>19}/{r['n_answerable']:<7}  {r['balanced_accuracy']:>12.3f}{mark}")
+            print("  Caution: the threshold is chosen and scored on the same questions, so this is optimistic.")
+            abstention = best
+
+        if args.abstain_below is not None:
+            abstention = abstention_stats(ans_top1, un_top1, args.abstain_below)
+            wrong = [r["id"] for r in rows if r["top1_score"] < args.abstain_below]
+            missed = [u["id"] for u in unanswerable if u["top1_score"] >= args.abstain_below]
+            print(f"\nABSTENTION AT THRESHOLD {args.abstain_below:g}")
+            print(f"  correctly refused : {abstention['correct_refusals']}/{abstention['n_unanswerable']} unanswerable"
+                  + (f"   (answered by mistake: {missed})" if missed else ""))
+            print(f"  wrongly refused   : {abstention['wrong_refusals']}/{abstention['n_answerable']} answerable"
+                  + (f"   ({wrong})" if wrong else ""))
 
     out_dir = resolve(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -198,7 +252,7 @@ def main():
     out_path.write_text(json.dumps({
         "retriever": args.retriever, "k": args.k,
         "chunks_sha256": sha256_of(chunks_path), "n_chunks": len(chunks),
-        "overall": overall, "by_type": by_type,
+        "overall": overall, "by_type": by_type, "abstention": abstention,
         "questions": rows, "unanswerable": unanswerable,
     }, indent=2), encoding="utf-8")
     print(f"\nSaved {out_path}")
