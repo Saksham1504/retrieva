@@ -104,6 +104,10 @@ def main():
         print(f"{rec['id']:4} {rec['type']:12} {outcome:14} {rec.get('top1_score', float('nan')):>7.2f} "
               f"{'-' if faith is None else format(faith, '.2f'):>6} "
               f"{'-' if corr is None else format(corr, '.1f'):>8}")
+        if "error" in rec:
+            print(f"     error: {rec['error'][:400]}")
+        if "judge_error" in rec:
+            print(f"     judge error: {rec['judge_error'][:400]}")
 
     # ------------------------------------------------------------------ summary
     answerable = [r for r in records if r["answerable"] and "error" not in r]

@@ -8,3 +8,4 @@ ruff
 pypdf        
 beautifulsoup4
 openai
+ollama
